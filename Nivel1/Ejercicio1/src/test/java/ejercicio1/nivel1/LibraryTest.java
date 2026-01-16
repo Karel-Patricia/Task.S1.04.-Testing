@@ -46,6 +46,18 @@ class LibraryTest {
                 .containsExactly("Clean Code", "Effective Java", "Refactoring");
     }
 
+    @Test
+    void shouldRemoveBookByTitle() {
+        Library library = new Library();
+
+        library.addBook("Clean Code");
+        library.addBook("Effective Java");
+
+        library.removeBook("Clean Code");
+
+        assertThat(library.getBooks()).hasSize(1);
+    }
+
 
 
 
