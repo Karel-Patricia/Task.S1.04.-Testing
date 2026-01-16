@@ -33,6 +33,20 @@ class LibraryTest {
         assertThat(library.getBookByIndex(1)).isEqualTo("Effective Java");
     }
 
+    @Test
+    void shouldInsertBookAtSpecificPosition() {
+        Library library = new Library();
+
+        library.addBook("Clean Code");
+        library.addBook("Refactoring");
+
+        library.addBookAt(1, "Effective Java");
+
+        assertThat(library.getBooks())
+                .containsExactly("Clean Code", "Effective Java", "Refactoring");
+    }
+
+
 
 
 }

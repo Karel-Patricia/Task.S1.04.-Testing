@@ -23,6 +23,13 @@ public class Library {
         return books.get(index);
     }
 
+    public void addBookAt(int index, String title) {
+        if (!books.contains(title)) {
+            books.add(index, title);
+        }
+    }
+
+
 
 
 
