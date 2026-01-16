@@ -23,8 +23,15 @@ class LibraryTest {
         assertThat(library.getBooks()).hasSize(2);
     }
 
+    @Test
+    void shouldReturnCorrectBookByIndex() {
+        Library library = new Library();
 
+        library.addBook("Clean Code");
+        library.addBook("Effective Java");
 
+        assertThat(library.getBookByIndex(1)).isEqualTo("Effective Java");
+    }
 
 
 

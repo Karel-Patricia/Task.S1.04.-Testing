@@ -19,6 +19,11 @@ public class Library {
         books.add(title);
     }
 
+    public String getBookByIndex(int index) {
+        return books.get(index);
+    }
+
+
 
 
 }
