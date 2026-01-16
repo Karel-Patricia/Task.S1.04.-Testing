@@ -14,4 +14,12 @@ public class Library {
     public List<String> getBooks() {
         return books;
     }
+
+    public void addBook(String title) {
+        books.add(title);
+    }
+
+
+
+
 }

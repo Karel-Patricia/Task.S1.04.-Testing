@@ -12,4 +12,16 @@ class LibraryTest {
 
         assertThat(library.getBooks()).isNotNull();
     }
+
+    @Test
+    void librarySizeShouldIncreaseWhenAddingBooks() {
+        Library library = new Library();
+
+        library.addBook("Clean Code");
+        library.addBook("Effective Java");
+
+        assertThat(library.getBooks()).hasSize(2);
+    }
+
+
 }
