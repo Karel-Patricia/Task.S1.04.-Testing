@@ -1,6 +1,7 @@
 package ejercicio1.nivel1;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Library {
@@ -32,6 +33,13 @@ public class Library {
     public void removeBook(String title) {
         books.remove(title);
     }
+
+    public List<String> getSortedBooks() {
+        List<String> sorted = new ArrayList<>(books);
+        Collections.sort(sorted);
+        return sorted;
+    }
+
 
 
 

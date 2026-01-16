@@ -2,6 +2,8 @@ package ejercicio1.nivel1;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.*;
 
 class LibraryTest {
@@ -57,6 +59,24 @@ class LibraryTest {
 
         assertThat(library.getBooks()).hasSize(1);
     }
+
+    @Test
+    void shouldReturnSortedCopyWithoutModifyingOriginalList() {
+        Library library = new Library();
+
+        library.addBook("Clean Code");
+        library.addBook("Effective Java");
+        library.addBook("Algorithms");
+
+        List<String> sortedBooks = library.getSortedBooks();
+
+        assertThat(sortedBooks)
+                .containsExactly("Algorithms", "Clean Code", "Effective Java");
+
+        assertThat(library.getBooks())
+                .containsExactly("Clean Code", "Effective Java", "Algorithms");
+    }
+
 
 
 
