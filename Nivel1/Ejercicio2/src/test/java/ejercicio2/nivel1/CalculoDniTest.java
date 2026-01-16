@@ -3,8 +3,7 @@ package ejercicio2.nivel1;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.*;
 
 public class CalculoDniTest {
 
@@ -28,5 +27,22 @@ public class CalculoDniTest {
 
         assertThat(result).isEqualTo(expectedLetter);
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "-1",
+            "-12345678"
+    })
+    void shouldThrowExceptionForNegativeDniNumbers(int number) {
+        CalculoDni calculoDni = new CalculoDni();
+
+        assertThatThrownBy(() -> calculoDni.calculateLetter(number))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+
+
+
+
 
 }
