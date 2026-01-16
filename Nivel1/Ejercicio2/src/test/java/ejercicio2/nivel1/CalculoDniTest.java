@@ -41,6 +41,20 @@ public class CalculoDniTest {
     }
 
 
+    @ParameterizedTest
+    @CsvSource({
+            "100000000",
+            "999999999"
+    })
+    void shouldThrowExceptionForTooLargeDniNumbers(int number) {
+        CalculoDni calculoDni = new CalculoDni();
+
+        assertThatThrownBy(() -> calculoDni.calculateLetter(number))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+
+
 
 
 
