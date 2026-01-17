@@ -1,5 +1,8 @@
 # Tarea S1.04 - Testing
 
+Este repositorio contiene la resolución de los ejercicios de testing en Java, desarrollados con Java 21, Maven, JUnit 5 y AssertJ, aplicando la metodología TDD (Test Driven Development).
+
+
 **Objetivos**: 
 Organizar correctamente un proyecto Java con Maven o Gradle , incluyendo las dependencias necesarias para realizar tests.
 Escribir y ejecutar pruebas unitarias con JUnit 5 para verificar el comportamiento de clases y métodos.
@@ -45,6 +48,9 @@ A continuación, implementa una clase de test con JUnit 5 que verifique que el m
 
 
 ## 🛠️Tecnologías
-- IntelliJ IDEA Java 21
-- JUnit 5 & Maven 
-- Git & GitHub 
+- IntelliJ IDEA 
+- Java 21
+- Maven
+- JUnit 5
+- AssertJ 
+- Git / GitHub 
