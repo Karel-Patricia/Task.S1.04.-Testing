@@ -1,19 +1,17 @@
 package ejercicio1.nivel1;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Library {
 
-    private List<String> books;
+    private Set<String> books;
 
     public Library() {
-        books = new ArrayList<>();
+        books = new LinkedHashSet<>();
     }
 
     public List<String> getBooks() {
-        return books;
+        return new ArrayList<>(books);
     }
 
     public void addBook(String title) {
@@ -21,13 +19,19 @@ public class Library {
     }
 
     public String getBookByIndex(int index) {
-        return books.get(index);
+        return getBooks().get(index);
     }
 
     public void addBookAt(int index, String title) {
-        if (!books.contains(title)) {
-            books.add(index, title);
+        if (books.contains(title)){
+            return;
         }
+
+        List<String> tempList = new ArrayList<>(books);
+        tempList.add(index, title);
+
+        books.clear();
+        books.addAll(tempList);
     }
 
     public void removeBook(String title) {

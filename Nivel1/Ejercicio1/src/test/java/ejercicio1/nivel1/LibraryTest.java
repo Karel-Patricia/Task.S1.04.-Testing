@@ -77,4 +77,16 @@ class LibraryTest {
                 .containsExactly("Clean Code", "Effective Java", "Algorithms");
     }
 
+    @Test
+    void shouldNotAllowDuplicateBookTitles() {
+        Library library = new Library();
+
+        library.addBook("Clean Code");
+        library.addBook("Clean Code");
+
+        assertThat(library.getBooks())
+                .hasSize(1)
+                .containsExactly("Clean Code");
+    }
+
 }
